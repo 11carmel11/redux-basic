@@ -1,4 +1,6 @@
-export default function Cart({ cart, checkoutHandler }) {
+import { connect } from "react-redux";
+
+function Cart({ cart, checkoutHandler }) {
   let counter = 0;
   return (
     <>
@@ -28,3 +30,13 @@ export default function Cart({ cart, checkoutHandler }) {
     </>
   );
 }
+
+const mapStateToProps = (state) => ({
+  cart: state.addToCartReducer,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: (type) => dispatch({ type: "ADD", payload: { name: type } }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

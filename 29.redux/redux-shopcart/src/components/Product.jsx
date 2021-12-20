@@ -9,6 +9,7 @@ export default function Product({ item, addHandler }) {
       <button
         type="button"
         id="add-btn"
+        disabled={!amount}
         onClick={() => {
           addHandler(name);
         }}
