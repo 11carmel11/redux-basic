@@ -7,12 +7,12 @@ export default function Cart({ cart, checkoutHandler }) {
       {cart.map((item) => {
         const { price, name, amount } = item;
         counter += price * amount;
-        if (!amount) return <></>;
-        return (
-          <p>
+
+        return !!amount ? (
+          <p key={name + "-cart"}>
             {name} - $ {price} x {amount}
           </p>
-        );
+        ) : null;
       })}
       {!counter && <p>please add items to cart</p>}
       <b>Total price: $ {counter}</b>
