@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <ShopList />
-      <Cart checkoutHandler={() => {}} />
+      <Cart />
     </>
   );
 }

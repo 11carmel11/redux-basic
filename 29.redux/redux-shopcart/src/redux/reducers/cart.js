@@ -13,6 +13,11 @@ const addToCartReducer = (state = initialState, action) => {
         if (item.name === payload.name) item.amount++;
         return item;
       });
+    case "CHECKOUT":
+      return state.map((item) => {
+        item.amount = 0;
+        return item;
+      });
     default:
       return state;
   }

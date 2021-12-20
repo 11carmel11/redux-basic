@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-function Cart({ cart, checkoutHandler }) {
+function Cart({ cart, checkout }) {
   let counter = 0;
   return (
     <>
@@ -22,7 +22,7 @@ function Cart({ cart, checkoutHandler }) {
       <button
         id="checkout-btn"
         type="button"
-        onClick={checkoutHandler}
+        onClick={checkout}
         disabled={!counter}
       >
         checkout
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addToCart: (type) => dispatch({ type: "ADD", payload: { name: type } }),
+  checkout: () => dispatch({ type: "CHECKOUT" }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
