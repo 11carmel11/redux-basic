@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 function Cart({ cart, checkout }) {
   let counter = 0;
   return (
-    <>
+    <div id="cart">
       ____________________________________________________
       <h3>your cart:</h3>
       {cart.map((item) => {
@@ -27,7 +27,7 @@ function Cart({ cart, checkout }) {
       >
         checkout
       </button>
-    </>
+    </div>
   );
 }
 
