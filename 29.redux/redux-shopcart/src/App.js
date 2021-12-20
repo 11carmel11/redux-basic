@@ -24,7 +24,7 @@ function App() {
     <>
       <Header />
       <ShopList products={products} />
-      <Cart cart={cart} />
+      <Cart cart={cart} checkoutHandler={() => {}} />
     </>
   );
 }
