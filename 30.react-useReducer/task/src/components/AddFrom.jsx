@@ -34,7 +34,7 @@ export default function AddForm() {
   };
 
   return (
-    <div>
+    <section>
       <Form>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
@@ -61,6 +61,8 @@ export default function AddForm() {
           Submit
         </Button>
       </Form>
-    </div>
+      <br />
+      <br />
+    </section>
   );
 }

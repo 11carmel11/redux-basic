@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
+import styled from "styled-components";
+import friendsContext from "../contexts/friends/context";
+import { sendAction } from "../helpers/sendAction";
 
-export default function Friend({ friend }) {
-  console.log(friend);
+const StyledComp = styled.button`
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+  display: inline-block;
+`;
+
+export default function Friend({ friend, index }) {
+  const { dispatch } = useContext(friendsContext);
+
+  const removeFriend = () => {
+    dispatch(sendAction(3, friend));
+  };
   return (
-    <div
-      style={{
-        border: "5px solid black",
-        margin: "5px",
-        padding: "5px",
-        display: "inline-block",
-      }}
-    >
-      <p>name: {friend.name}</p>
-      <p>age: {friend.age}</p>
-    </div>
+    <tbody>
+      <tr>
+        <td>{index + 1}</td>
+        <td>{friend.name}</td>
+        <td>{friend.age}</td>
+        <td>
+          <StyledComp type="button" onClick={removeFriend}>
+            🗑
+          </StyledComp>
+        </td>
+      </tr>
+    </tbody>
   );
 }
