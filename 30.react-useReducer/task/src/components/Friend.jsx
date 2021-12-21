@@ -11,23 +11,42 @@ const StyledComp = styled.button`
 `;
 
 export default function Friend({ friend, index }) {
-  const { dispatch } = useContext(friendsContext);
+  const { dispatch, friends } = useContext(friendsContext);
+
+  const indexInList = friends.indexOf(friend);
 
   const removeFriend = () => {
     dispatch(sendAction(3, friend));
   };
+
+  const setEditable = (e) => {
+    e.preventDefault();
+    e.target.contentEditable = true;
+    e.target.focus();
+  };
+
+  const blurHandler = (e) => {
+    e.target.contentEditable = false;
+    const { id, innerText } = e.target;
+    dispatch(
+      sendAction(4, { index: indexInList }, { ...friend, [id]: innerText })
+    );
+  };
+
   return (
-    <tbody>
-      <tr>
-        <td>{index + 1}</td>
-        <td>{friend.name}</td>
-        <td>{friend.age}</td>
-        <td>
-          <StyledComp type="button" onClick={removeFriend}>
-            🗑
-          </StyledComp>
-        </td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>{index + 1}</td>
+      <td id="name" onDoubleClick={setEditable} onBlur={blurHandler}>
+        {friend.name}
+      </td>
+      <td id="age" onDoubleClick={setEditable} onBlur={blurHandler}>
+        {friend.age}
+      </td>
+      <td>
+        <StyledComp type="button" onClick={removeFriend}>
+          🗑
+        </StyledComp>
+      </td>
+    </tr>
   );
 }

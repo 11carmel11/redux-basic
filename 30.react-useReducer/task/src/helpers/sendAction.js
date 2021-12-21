@@ -4,7 +4,7 @@
  * 3-remove
  * 4-update
  */
-export const sendAction = (type, payload = {}) => {
+export const sendAction = (type, payload = {}, update = {}) => {
   switch (type) {
     case 1:
       return { type: "INITIAL_STATE", payload };
@@ -16,7 +16,7 @@ export const sendAction = (type, payload = {}) => {
       return { type: "REMOVE_FRIEND", payload };
 
     case 4:
-      return { type: "UPDATE_FRIEND", payload };
+      return { type: "UPDATE_FRIEND", payload, update };
 
     default:
       throw new Error("unknown type");

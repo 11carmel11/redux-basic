@@ -17,9 +17,11 @@ export default function FriendsList() {
           <th>remove</th>
         </tr>
       </thead>
-      {friends.map((friend, i) => (
-        <Friend key={nanoid()} friend={friend} index={i} />
-      ))}
+      <tbody>
+        {friends.map((friend, i) => (
+          <Friend key={nanoid()} friend={friend} index={i} />
+        ))}
+      </tbody>
     </Table>
   );
 }

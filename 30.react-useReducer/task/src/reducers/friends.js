@@ -7,7 +7,7 @@
 import db from "../DB/db";
 
 export const friendsReducer = (state = [], action) => {
-  const { type, payload } = action;
+  const { type, payload, update } = action;
   const indexOfFriend = state.indexOf(payload);
   switch (type) {
     case "INITIAL_STATE":
@@ -22,7 +22,8 @@ export const friendsReducer = (state = [], action) => {
       return copyOfState;
 
     case "UPDATE_FRIEND":
-      state[indexOfFriend] = payload;
+      console.log(payload, update);
+      state[payload.index] = update;
       return state;
 
     default:
