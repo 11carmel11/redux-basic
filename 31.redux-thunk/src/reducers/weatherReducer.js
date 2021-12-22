@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const initial = {
   coord: {
     lon: -0.1257,
@@ -43,7 +45,7 @@ const initial = {
   cod: 200,
 };
 
-export const weatherReducer = (state = initial, action) => {
+const weatherReducer = (state = initial, action) => {
   const { type, weather } = action;
   switch (type) {
     case "SET_WEATHER":
@@ -53,3 +55,5 @@ export const weatherReducer = (state = initial, action) => {
       return state;
   }
 };
+
+export default combineReducers({ weatherReducer });

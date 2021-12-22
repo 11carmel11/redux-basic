@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -10,23 +10,20 @@ const StyledComp = styled.main`
 `;
 
 function calcTime(offset) {
-  const d = new Date();
-
-  const utc = d.getTime() + d.getTimezoneOffset() * 60000;
-
-  const nd = new Date(utc + 1000 * offset);
-
-  return nd.toLocaleString();
+  return new Date(new Date().getTime() + offset * 1000)
+    .toUTCString()
+    .replace(/ GMT$/, "");
 }
 
 export default function Ticket() {
-  const stats = useSelector((state) => state);
-  const [date, setDate] = useState(calcTime(stats.timezone));
-  console.log(stats.timezone);
+  const {
+    name,
+    main,
+    weather: [{ main: mainDes, description }],
+    timezone,
+  } = useSelector((state) => state.weatherReducer);
 
-  setInterval(() => {
-    setDate(calcTime(stats.timezone));
-  }, 1000);
+  const date = calcTime(timezone);
 
   return (
     <StyledComp>
@@ -43,18 +40,18 @@ export default function Ticket() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
       </section>
       <section id="information">
-        <h2>{stats.name}</h2>
-        <p>{date}</p>
+        <h2>{name}</h2>
+        <b>
+          last updated: {date} ({name} time)
+        </b>
+        <br /> <br />
         <h4>
-          {stats.main.temp}🗑, feels like {stats.main.feels_like}
+          {main?.temp}🗑, feels like {main?.feels_like}
         </h4>
         <p>
-          <b>{stats.weather[0].main}</b>: {stats.weather[0].description}
+          <b>{mainDes}</b>: {description}
         </p>
       </section>
     </StyledComp>
