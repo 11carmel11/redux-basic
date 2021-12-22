@@ -5,7 +5,7 @@ import styled from "styled-components";
 const MainComp = styled.main`
   box-shadow: 0px 0px 50px 4px #8f8f8f;
   border-radius: 30px;
-  margin: 50px 150px;
+  margin: 50px 200px;
   height: 80vh;
   background-color: ${(props) =>
     props.temp >= 25
@@ -73,7 +73,7 @@ export default function Ticket() {
         </b>
         <br /> <br />
         <h4>
-          {temp}°C, feels like {feels_like}
+          {temp}°C, feels like {feels_like}°C
         </h4>
         <p>
           <b>{mainDes}</b>: {description}
