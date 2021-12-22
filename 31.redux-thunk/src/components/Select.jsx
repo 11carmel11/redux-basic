@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import getCityWeather from "../middlewares/cityMiddleware";
@@ -6,16 +6,19 @@ import getCityWeather from "../middlewares/cityMiddleware";
 export default function Select() {
   const dispatch = useDispatch();
 
-  const setCity = async ({ target: { id } }) => {
+  const setCity = ({ target: { id } }) => {
     dispatch(getCityWeather(id));
   };
+
+  useEffect(() => {
+    setCity({ target: { id: "London" } });
+  });
 
   return (
     <DropdownButton id="dropdown-basic-button" title="Dropdown button">
       <Dropdown.Item onClick={setCity} id="London">
         London
       </Dropdown.Item>
-      <Dropdown.Divider />
       <Dropdown.Item onClick={setCity} id="Tel-Aviv">
         Tel Aviv
       </Dropdown.Item>
