@@ -3,14 +3,15 @@ import React, { useEffect, useState } from "react";
 export default function Item({
   index,
   disabled,
-  item: { name, fullQuantity },
+  item: { name, fullQuantity, currentAmount },
 }) {
   const [current, setCurrent] = useState(0);
+
   let currentInput;
 
   useEffect(() => {
-    setCurrent(fullQuantity);
-  }, [fullQuantity]);
+    setCurrent(currentAmount || fullQuantity);
+  }, [currentAmount, fullQuantity]);
 
   return (
     <tr>
@@ -28,7 +29,7 @@ export default function Item({
           onChange={() => {
             setCurrent(currentInput.value);
           }}
-          disabled={disabled}
+          disabled={typeof currentAmount === "number" || disabled}
         />
       </td>
       <td>{fullQuantity - current}</td>

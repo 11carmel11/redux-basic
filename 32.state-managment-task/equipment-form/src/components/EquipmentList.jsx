@@ -10,11 +10,11 @@ export default function EquipmentList() {
   const {
     info: { name, workPlace, date },
   } = useContext(infoContext);
+
+  const isFilled = name && workPlace && date;
   return (
     <>
-      {name && workPlace && date && (
-        <h3>hello, {name}! Please fill the form below:</h3>
-      )}
+      {isFilled && <h3>hello, {name}! Please fill the form below:</h3>}
       <Table striped bordered hover size="sm" variant="dark">
         <thead>
           <tr>
@@ -31,7 +31,7 @@ export default function EquipmentList() {
               key={nanoid()}
               index={i + 1}
               item={item}
-              disabled={!(name && workPlace && date)}
+              disabled={!isFilled}
             />
           ))}
         </tbody>
