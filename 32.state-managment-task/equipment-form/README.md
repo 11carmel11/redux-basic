@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# State management week-end task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Background:
 
-## Available Scripts
+- Congratulations, you are the CEO of the successful human resources company <choose your company name>.
+- The company has many employees with the same position in different parts of the country and around the world (all workers are **Paramedics**).
+- Each employee's day begins with filling out a manual form that includes his or her personal details, workplace, and inventory list at the current workplace.
+- Following the growth of the company, there is a need to upgrade to a smarter system that will give every employee the opportunity to fill out the form online and submit it.
+- Your task is to build the front side of the form for the employee.
 
-In the project directory, you can run:
+## Requirements:
 
-### `npm start`
+1. Working with React and a logical division into components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Create two states, one for the employee details and one for the list of current equipment in the employee's workplace.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. An employee information form will include the fields:
 
-### `npm test`
+- full name,
+- work place,
+- date.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. A form for filling out the equipment list will contain the following for each item:
 
-### `npm run build`
+- the name of the item,
+- the quantity that should be in the position.
+- the current quantity available in the position,
+- according to the **current quantity** and the **quantity that should be in the position** also a column that will show how many items are currently missing in the position.
+- You will find the list of equipment in the `db` directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Initialize the **items state** according to the equipment list when by default the current quantity of each product will be equal to 0.
+- Allow the employee to update the state of the information about him or the state of the product list using the two forms.
+- Create an area where the employee can add a new product that is currently in his position but is not listed in the equipment list in the first place.
+- Give the employee the option to remove only the products which he himself has decided to add.
+- Please make use of Redux or React hooks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- if you are using react hooks please make sure you use:
 
-### `npm run eject`
+1. useState
+2. useEffect
+3. useContext
+4. useReducer
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Assets:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- You will find pictures of sample forms attached in the folder
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Bonus:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add an area for the employee where he can sign a digital signature.
