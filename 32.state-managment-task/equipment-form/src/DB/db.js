@@ -1,4 +1,4 @@
-exports.fullEquipmentList = [
+const fullEquipmentList = [
   {
     name: "Stethoscope",
     fullQuantity: 2,
@@ -28,3 +28,4 @@ exports.fullEquipmentList = [
     fullQuantity: 2,
   },
 ];
+export default fullEquipmentList;
