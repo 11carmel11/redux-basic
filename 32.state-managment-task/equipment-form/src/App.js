@@ -1,5 +1,4 @@
 import React from "react";
-// import AddFrom from "./components/AddForm";
 import AddModal from "./components/AddModal";
 import EquipmentList from "./components/EquipmentList";
 import Info from "./components/Info";
@@ -12,11 +11,9 @@ export default function App() {
       <div>
         <InfoState>
           <Info />
-          <br />
           <ItemsState>
             <EquipmentList />
             <AddModal />
-            {/* <AddFrom /> */}
           </ItemsState>
         </InfoState>
       </div>

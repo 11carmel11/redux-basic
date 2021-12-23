@@ -11,12 +11,12 @@ export default function AddModal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Add item here
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Fill the form to add an item</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <AddFrom closeHandler={handleClose} />
