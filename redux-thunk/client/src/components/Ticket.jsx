@@ -56,7 +56,7 @@ export default function Ticket() {
     Paris: "https://www.voyagesdereve.ch/upload/images/Paris-Tour-Eiffel.jpg",
     Dubai: "https://www.neosair.it/content/images/pagine/dubai.jpg",
     Barcelona:
-      "https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.18169-9/1170863_869449566486106_4872375352864736802_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=wgC9VA6SIuoAX-tBkMJ&_nc_ht=scontent.ftlv2-1.fna&oh=00_AT_qGSmp4_agR1UfHQRVGhAhDivVmJiKOVV6k2uVhIBpcA&oe=61E7DF9B",
+      "https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.18169-9/1170863_869449566486106_4872375352864736802_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=3Ue0-ZXkBMwAX8ztG4e&_nc_ht=scontent.ftlv2-1.fna&oh=00_AT9L0KDuvxxHc4W-8dUadku5a8nvNpg6KJPM_MliN0qEnA&oe=6242D71B",
     "New York":
       "https://media.architecturaldigest.com/photos/5cc35bea39b7d6ac4b1b2675/GettyImages-960609922.jpg",
   };

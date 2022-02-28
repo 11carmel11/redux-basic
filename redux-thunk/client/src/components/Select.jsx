@@ -15,7 +15,7 @@ export default function Select() {
   });
 
   return (
-    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+    <DropdownButton id="dropdown-basic-button" title="Choose city">
       <Dropdown.Item onClick={setCity} id="London">
         London
       </Dropdown.Item>
